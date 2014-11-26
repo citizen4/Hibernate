@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="model.Address" table="address_tbl">
+	<id name="id" column="ID" type="long">
+		<generator class="native"></generator>
+	</id>
+	<property name="firstName" column="VORNAME" type="string"></property>
+	<property name="lastName" column="NACHNAME" type="string"></property>
+	<property name="zipCode" column="PLZ" type="string"></property>
+	<property name="city" column="ORT" type="string"></property>
+	<property name="street" column="STRASSE" type="string"></property>
+	<property name="email" column="EMAIL" type="string"></property>
+	<property name="phone" column="TELEFON" type="string"></property>
+	<property name="cellPhone" column="MOBIL" type="string"></property>
+</class>
+</hibernate-mapping>
