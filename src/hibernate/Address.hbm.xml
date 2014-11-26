@@ -4,15 +4,15 @@
 <hibernate-mapping>
 <class name="model.Address" table="address_tbl">
 	<id name="id" column="ID" type="long">
-		<generator class="native"></generator>
+		<generator class="native"/>
 	</id>
-	<property name="firstName" column="VORNAME" type="string"></property>
-	<property name="lastName" column="NACHNAME" type="string"></property>
-	<property name="zipCode" column="PLZ" type="string"></property>
-	<property name="city" column="ORT" type="string"></property>
-	<property name="street" column="STRASSE" type="string"></property>
-	<property name="email" column="EMAIL" type="string"></property>
-	<property name="phone" column="TELEFON" type="string"></property>
-	<property name="cellPhone" column="MOBIL" type="string"></property>
+	<property name="firstName" column="VORNAME" type="string"/>
+	<property name="lastName" column="NACHNAME" type="string"/>
+	<property name="zipCode" column="PLZ" type="string"/>
+	<property name="city" column="ORT" type="string"/>
+	<property name="street" column="STRASSE" type="string"/>
+	<property name="email" column="EMAIL" type="string"/>
+	<property name="phone" column="TELEFON" type="string"/>
+	<property name="cellPhone" column="MOBIL" type="string"/>
 </class>
 </hibernate-mapping>

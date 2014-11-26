@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.AddressTblEntity" table="address_tbl" schema="">
+        <id name="id" column="ID"/>
+        <property name="nachname" column="NACHNAME"/>
+        <property name="vorname" column="VORNAME"/>
+        <property name="plz" column="PLZ"/>
+        <property name="ort" column="ORT"/>
+        <property name="strasse" column="STRASSE"/>
+        <property name="telefon" column="TELEFON"/>
+        <property name="mobil" column="MOBIL"/>
+        <property name="email" column="EMAIL"/>
+    </class>
+</hibernate-mapping>
