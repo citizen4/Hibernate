@@ -6,11 +6,11 @@
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
         <property name="hibernate.connection.url">jdbc:sqlite:/tmp/person.db</property>
-        <property name="hibernate.connection.username"></property>
-        <!--<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>-->
+        <property name="hibernate.connection.username"/>
         <property name="dialect">hibernate.SQLiteDialect</property>
         <property name="hibernate.search.autoregister_listeners">false</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping resource="hibernate/Address.hbm.xml" />
+        <!--<mapping resource="hibernate/Address.hbm.xml" />-->
+        <mapping class="model.Address" />
     </session-factory>
 </hibernate-configuration>

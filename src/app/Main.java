@@ -14,7 +14,7 @@ public class Main
    public static void listAddresses()
    {
       Address address = new Address();
-      Session session = HibernateUtil.getInstance().currentSession();
+      Session session = HibernateUtil.getSessionFactory().openSession();
 
       //Transaction tx = session.beginTransaction();
       Query query = session.createQuery("FROM Address");
@@ -26,12 +26,20 @@ public class Main
          }
       }
       //tx.commit();
+
+      session.close();
    }
 
    public static void main(String[] args)
    {
-      HibernateUtil.getInstance().createHibernateSession();
       listAddresses();
-      HibernateUtil.getInstance().closeSession();
+
+      try {
+         Thread.sleep(1000);
+      } catch (InterruptedException e) {
+         e.printStackTrace();
+         System.exit(0);
+      }
+
    }
 }

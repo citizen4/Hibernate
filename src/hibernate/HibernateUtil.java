@@ -3,7 +3,9 @@ package hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.annotations.common.annotationfactory.AnnotationFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
@@ -11,6 +13,23 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 public class HibernateUtil
 {
+
+   private static SessionFactory sessionFactory;
+
+     static {
+    	Configuration configuration = new Configuration().configure();
+    	StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+        sessionFactory = configuration.buildSessionFactory(builder.build());
+     }
+
+
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+
+
+   /*
    private static HibernateUtil instance = null;
    private static SessionFactory sessionFactory;
    private static final ThreadLocal<Session> session = new ThreadLocal<>();
@@ -61,5 +80,5 @@ public class HibernateUtil
    public SessionFactory getSessionFactory()
    {
       return sessionFactory;
-   }
+   }*/
 }

@@ -1,18 +1,35 @@
 package model;
 
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
-public class Address implements Serializable
+@Entity
+@Table(name = "address_tbl", schema = "", catalog = "")
+public class Address
 {
-   private long id;
+   @Id
+   @Column(name = "ID")
+   private Long id;
+
+   @Column(name = "VORNAME")
    private String firstName;
+   @Column(name = "NACHNAME")
    private String lastName;
+   @Column(name = "PLZ")
    private String zipCode;
+   @Column(name = "ORT")
    private String city;
+   @Column(name = "STRASSE")
    private String street;
+   @Column(name = "EMAIL")
    private String email;
+   @Column(name = "TELEFON")
    private String phone;
+   @Column(name = "MOBIL")
    private String cellPhone;
 
 

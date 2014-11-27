@@ -2,9 +2,7 @@ package model;
 
 import javax.persistence.*;
 
-/**
- * Created by soul on 11/27/14.
- */
+
 @Entity
 @Table(name = "address_tbl", schema = "", catalog = "")
 public class AddressTblEntity
