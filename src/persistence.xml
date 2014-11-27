@@ -1,0 +1,18 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+    <persistence-unit name="myapp">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>model.User</class>
+        <properties>
+            <property name="hibernate.bytecode.use_reflection_optimizer" value="false"/>
+            <property name="hibernate.connection.driver_class" value="org.sqlite.JDBC"/>
+            <property name="hibernate.connection.url" value="jdbc:sqlite:c:\java3\sqlitedb\person.db"/>
+            <property name="hibernate.connection.username" value=""/>
+            <property name="dialect" value="hibernate.SQLiteDialect"/>
+            <property name="hibernate.search.autoregister_listeners" value="false"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

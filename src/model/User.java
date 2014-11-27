@@ -3,15 +3,17 @@ package model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "address_tbl", schema = "", catalog = "")
-public class Address
+public class User
 {
    @Id
+   @GeneratedValue
    @Column(name = "ID")
    private Long id;
 
@@ -121,5 +123,22 @@ public class Address
    public void setCellPhone(String cellPhone)
    {
       this.cellPhone = cellPhone;
+   }
+
+
+   @Override
+   public String toString()
+   {
+      return "User{" +
+              "id=" + id +
+              ", firstName='" + firstName + '\'' +
+              ", lastName='" + lastName + '\'' +
+              ", zipCode='" + zipCode + '\'' +
+              ", city='" + city + '\'' +
+              ", street='" + street + '\'' +
+              ", email='" + email + '\'' +
+              ", phone='" + phone + '\'' +
+              ", cellPhone='" + cellPhone + '\'' +
+              '}';
    }
 }

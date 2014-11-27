@@ -1,44 +1,36 @@
 package app;
 
-import hibernate.HibernateUtil;
-import model.Address;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-import java.util.List;
+import model.User;
+import model.UserDAO;
 
 public class Main
 {
 
-   public static void listAddresses()
+   public static void printList()
    {
-      Address address = new Address();
-      Session session = HibernateUtil.getSessionFactory().openSession();
+      UserDAO userDAO = new UserDAO();
 
-      //Transaction tx = session.beginTransaction();
-      Query query = session.createQuery("FROM Address");
-      List<Address> addresses = query.list();
-
-      if(addresses != null){
-         for(Address a: addresses){
-            System.out.println("Name: "+a.getFirstName()+" "+a.getLastName());
-         }
+      for (User user : userDAO.findAllUsers()) {
+         System.out.println("Name: " + user.getFirstName() + " " + user.getLastName());
       }
-      //tx.commit();
 
-      session.close();
    }
 
    public static void main(String[] args)
    {
-      listAddresses();
+      UserDAO userDAO = new UserDAO();
+      //User user = new User();
+
+      //System.out.println(userDAO.findUserById(5));
+      System.out.println(userDAO.findUserByZipCity("33333", "Frankfurt"));
+
+
 
       try {
          Thread.sleep(1000);
+         System.exit(0);
       } catch (InterruptedException e) {
          e.printStackTrace();
-         System.exit(0);
       }
 
    }
